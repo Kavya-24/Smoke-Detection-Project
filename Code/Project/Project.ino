@@ -6,9 +6,9 @@
 #define BLYNK_PRINT Serial
 #include <BlynkSimpleEsp8266.h>
   
-char authCode[] = "p68yxtQRn2TfmOqlwbUZvcUPdLDQH-0L";         //Auth code for BLYNK
-char ssid[] = "Vinod";                                        //Wifi Password
-char pass[] = "21081951";                                     //Password
+char authCode[] = "......sth";         //Auth code for BLYNK
+char ssid[] = "wifi_name";                                        //Wifi Password
+char pass[] = "wifi_password";                                    //Password
 
 
 
@@ -33,6 +33,8 @@ void setup() {
   delay(10);
 
   pinMode(relay, OUTPUT);
+  
+  //Not low because the connections were reveresed with glue
   digitalWrite(relay, HIGH);
   
   Blynk.config(authCode); 
@@ -88,6 +90,7 @@ void loop() {
 
     if(gasState == 1){
         
+         //Not high because the connections were reveresed with glue
          digitalWrite(relay, LOW);
          tone(14,300,500);
          Serial.println("Firing message");
@@ -112,6 +115,7 @@ void loop() {
     
 
     //Add buzzer for 9
+    //Not low because the connections were reveresed with glue
     digitalWrite(relay, HIGH);
 
     
